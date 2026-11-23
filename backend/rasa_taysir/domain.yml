@@ -1,0 +1,216 @@
+version: "3.1"
+
+
+intents:
+  - greet
+  - donner_nom
+  - donner_prenom
+  - donner_telephone
+  - donner_age
+  - donner_profession
+  - donner_revenu
+  - donner_montant
+  - donner_charges
+  - donner_zone
+  - donner_informations
+
+
+  - faq_financement
+  - faq_eligibilite
+  - faq_documents
+  - faq_montant
+  - faq_remboursement
+  - faq_delai
+  - faq_conditions
+  - faq_agence
+  - faq_contact
+  - faq_frais
+  - faq_demande
+  - faq_simulation
+
+  - question_generale
+  - demande_credit
+
+
+entities:
+  - nom
+  - prenom
+  - telephone
+  - age
+  - profession
+  - revenu
+  - montant_demande
+  - charges
+  - zone_geographique
+
+
+
+slots:
+  nom:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  prenom:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  telephone:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  age:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  profession:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  revenu:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  montant_demande:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  charges:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  zone_geographique:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  capacite_remboursement:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  score:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  qualification:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  eligibilite:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  etat:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+
+
+responses:
+
+  
+  utter_bienvenue:
+    - text: "Bonjour, bienvenue chez Taysir Microfinance."
+
+
+  
+  utter_demander_prenom:
+    - text: "Quel est votre prénom ?"
+
+  utter_demander_telephone:
+    - text: "Quel est votre numéro de téléphone ?"
+
+  utter_demander_age:
+    - text: "Quel est votre âge ?"
+
+  utter_demander_profession:
+    - text: "Quelle est votre situation professionnelle ?"
+
+  utter_demander_revenu:
+    - text: "Quel est votre revenu mensuel ?"
+
+  utter_demander_montant:
+    - text: "Quel montant de financement souhaitez-vous ?"
+
+  utter_demander_charges:
+    - text: "Quelles sont vos charges mensuelles approximatives ?"
+
+  utter_demander_zone:
+    - text: "Dans quelle zone géographique habitez-vous ?"
+
+
+ 
+  utter_analyse:
+    - text: "Merci pour toutes vos informations. Votre profil va maintenant être évalué."
+
+
+
+  utter_faq_financement:
+    - text: "Taysir propose différents types de financements adaptés aux besoins des clients. Cette information sera précisée après validation par mon encadrant."
+
+  utter_faq_eligibilite:
+    - text: "L'éligibilité dépend notamment du profil du demandeur, de sa situation professionnelle et de sa capacité de remboursement."
+
+  utter_faq_documents:
+    - text: "Les documents nécessaires dépendent du type de financement et de la situation du demandeur."
+
+  utter_faq_montant:
+    - text: "Le montant de financement dépend du profil du demandeur, de son besoin et de sa capacité de remboursement."
+
+  utter_faq_remboursement:
+    - text: "Le remboursement s'effectue selon un échéancier défini en fonction des conditions du financement."
+
+  utter_faq_delai:
+    - text: "Le délai de traitement dépend de la demande et de la vérification des informations fournies."
+
+  utter_faq_conditions:
+    - text: "Les conditions dépendent du produit de financement et du profil du demandeur."
+
+  utter_faq_agence:
+    - text: "Vous pouvez contacter Taysir afin de connaître l'agence la plus proche de votre zone."
+
+  utter_faq_contact:
+    - text: "Vous pouvez contacter Taysir via ses canaux de communication officiels."
+
+  utter_faq_frais:
+    - text: "Les frais dépendent du produit de financement et des conditions applicables."
+
+  utter_faq_demande:
+    - text: "Pour commencer une demande, le chatbot peut recueillir vos informations et effectuer une première évaluation de votre profil."
+
+  utter_faq_simulation:
+    - text: "Une première évaluation peut être réalisée à partir de vos revenus, charges et besoin de financement."
+
+
+actions:
+  - action_initialiser_etat
+  - action_traiter_reponse
+  - action_evaluer_prospect
+  - action_terminer_conversation
+  - action_llm_reponse

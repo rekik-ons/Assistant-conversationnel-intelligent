@@ -1,0 +1,26 @@
+version: "3.1"
+stories:
+- story: Qualification avec profession enseignant (tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: action_initialiser_etat
+  - intent: donner_nom  # predicted: donner_nom: [Ali](nom)
+  - action: action_traiter_reponse
+  - intent: donner_prenom  # predicted: donner_nom: Mohamed
+  - action: action_traiter_reponse
+  - intent: donner_telephone  # predicted: donner_telephone: [50663123](telephone)
+  - action: action_traiter_reponse
+  - intent: donner_age  # predicted: donner_age: [22](age)
+  - action: action_traiter_reponse
+  - intent: donner_profession  # predicted: donner_profession: [enseignant](profession)
+  - action: action_traiter_reponse
+- story: FAQ pendant qualification (tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: action_initialiser_etat
+  - intent: donner_nom  # predicted: donner_nom: [Ali](nom)
+  - action: action_traiter_reponse
+  - intent: donner_prenom  # predicted: donner_nom: Mohamed
+  - action: action_traiter_reponse
+  - intent: question_generale
+  - action: action_llm_reponse

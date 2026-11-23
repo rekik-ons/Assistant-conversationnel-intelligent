@@ -1,0 +1,66 @@
+version: "3.1"
+stories:
+
+- story: Démarrer une qualification
+  steps:
+  - user: |
+      Bonjour
+    intent: greet
+  - action: action_initialiser_etat
+
+- story: Question générale avant qualification
+  steps:
+  - user: |
+      Bonjour
+    intent: greet
+  - action: action_initialiser_etat
+  - user: |
+      C'est quoi un microcrédit ?
+    intent: question_generale
+  - action: action_llm_reponse
+
+- story: Qualification avec profession enseignant
+  steps:
+  - user: |
+      Bonjour
+    intent: greet
+  - action: action_initialiser_etat
+  - user: |
+      Ali
+    intent: donner_nom
+  - action: action_traiter_reponse
+  - user: |
+      Mohamed
+    intent: donner_prenom
+  - action: action_traiter_reponse
+  - user: |
+      50663123
+    intent: donner_telephone
+  - action: action_traiter_reponse
+  - user: |
+      22
+    intent: donner_age
+  - action: action_traiter_reponse
+  - user: |
+      enseignant
+    intent: donner_profession
+  - action: action_traiter_reponse
+
+- story: FAQ pendant qualification
+  steps:
+  - user: |
+      Bonjour
+    intent: greet
+  - action: action_initialiser_etat
+  - user: |
+      Ali
+    intent: donner_nom
+  - action: action_traiter_reponse
+  - user: |
+      Mohamed
+    intent: donner_prenom
+  - action: action_traiter_reponse
+  - user: |
+      C'est quoi un microcrédit ?
+    intent: question_generale
+  - action: action_llm_reponse

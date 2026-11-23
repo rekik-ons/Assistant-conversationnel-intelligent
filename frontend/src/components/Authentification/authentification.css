@@ -1,0 +1,227 @@
+/* ==========================================================
+   PAGE DE CONNEXION (thème bleu)
+========================================================== */
+
+.auth-page {
+    min-height: 100vh !important;
+    box-sizing: border-box;
+
+    background: #f5f7fb !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+/* ==========================================================
+   CARTE DE CONNEXION
+========================================================== */
+
+.auth-page .auth-card {
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+
+    background: white !important;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    padding: 36px 32px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ==========================================================
+   EN-TÊTE
+========================================================== */
+
+.auth-page .auth-header {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.auth-page .auth-header h1 {
+    margin: 0;
+
+    font-size: 26px;
+    font-weight: 700;
+
+    color: #123c69 !important;
+}
+
+.auth-page .auth-header p {
+    margin: 8px 0 0;
+
+    font-size: 14px;
+    color: #6b7280 !important;
+}
+
+
+/* ==========================================================
+   CHAMPS
+========================================================== */
+
+.auth-page .auth-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.auth-page .auth-field label {
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.auth-page .auth-field input {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #f8fafc !important;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    padding: 12px 14px;
+
+    font-size: 15px;
+    font-family: inherit;
+    color: #1f2937;
+
+    outline: none;
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-page .auth-field input::placeholder {
+    color: #9ca3af;
+}
+
+.auth-page .auth-field input:focus {
+    background: white !important;
+
+    border-color: #3859b6;
+    box-shadow: 0 0 0 3px rgba(56, 89, 182, 0.15);
+}
+
+/* Champs remplis automatiquement par le navigateur : pas de fond bleu clair/vert */
+.auth-page .auth-field input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #f8fafc inset !important;
+    -webkit-text-fill-color: #1f2937 !important;
+}
+
+
+/* ==========================================================
+   BOUTON (bleu)
+========================================================== */
+
+.auth-page .auth-button {
+    width: 100%;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #3859b6 !important;
+    color: white !important;
+
+    padding: 13px 18px;
+    margin-top: 4px;
+
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.auth-page .auth-button:hover:not(:disabled) {
+    background: #2d4a99 !important;
+    transform: translateY(-1px);
+}
+
+.auth-page .auth-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* ==========================================================
+   ALERTES (succès en bleu, erreur en rouge)
+========================================================== */
+
+.auth-page .auth-alert {
+    position: fixed !important;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+    max-width: calc(100% - 40px);
+    box-sizing: border-box;
+
+    padding: 14px 24px;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+
+    animation: auth-alert-slide 0.3s ease;
+}
+
+.auth-page .auth-alert.success {
+    background: #dbeafe !important;
+    color: #1e3a8a !important;
+    border-left: 5px solid #3859b6;
+}
+
+.auth-page .auth-alert.error {
+    background: #fee2e2 !important;
+    color: #b91c1c !important;
+    border-left: 5px solid #dc2626;
+}
+
+@keyframes auth-alert-slide {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -15px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .auth-page .auth-card {
+        padding: 28px 22px;
+    }
+
+    .auth-page .auth-header h1 {
+        font-size: 22px;
+    }
+
+    .auth-page .auth-alert {
+        width: calc(100% - 40px);
+    }
+}

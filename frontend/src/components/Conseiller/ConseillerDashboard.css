@@ -1,0 +1,292 @@
+.conseiller-page {
+    min-height: 100vh;
+    padding: 30px;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+.conseiller-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.conseiller-header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.conseiller-header p {
+    margin-top: 5px;
+    color: #6b7280;
+}
+
+.refresh-button {
+    border: none;
+    background: #3859b6;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.filter {
+    border: 2px solid transparent;
+    background: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.filter.chaud {
+    border-color: #fecaca;
+}
+
+.filter.tiede {
+    border-color: #fde68a;
+}
+
+.filter.froid {
+    border-color: #bfdbfe;
+}
+
+.filter.active.chaud {
+    background: #fee2e2;
+}
+
+.filter.active.tiede {
+    background: #fef3c7;
+}
+
+.filter.active.froid {
+    background: #dbeafe;
+}
+
+.prospects-section {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    margin: 0;
+}
+
+.section-title p {
+    color: #6b7280;
+}
+
+.prospect-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.prospect-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
+}
+
+.prospect-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 15px;
+}
+
+.prospect-card-header h3 {
+    margin: 0 0 5px;
+}
+
+.prospect-card-header span {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.score {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #3859b6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.prospect-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.prospect-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.prospect-info span {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.prospect-info strong.statut-badge,
+.details-grid strong.statut-badge {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.details-button {
+    width: 100%;
+    border: none;
+    background: #3859b6;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.details-button:hover {
+    opacity: 0.9;
+}
+
+.loading,
+.empty,
+.error {
+    padding: 40px;
+    text-align: center;
+}
+
+.error {
+    color: #dc2626;
+}
+
+@media (max-width: 800px) {
+
+    .prospect-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .conseiller-page {
+        padding: 15px;
+    }
+
+    .conseiller-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .prospect-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+.filter.non-qualifie {
+    border-color: #9ca3af;
+    color: #4b5563;
+}
+
+.filter.non-qualifie.active {
+    background: #6b7280;
+    color: white;
+    border-color: #6b7280;
+}
+
+.status-filters {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.status-filter {
+    border: 1px solid #d1d5db;
+    background: white;
+    color: #374151;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+.status-filter:hover {
+    background: #f8fafc;
+}
+
+.status-filter.active {
+    background: #3859b6;
+    color: white;
+    border-color: #3859b6;
+}
+
+.status-filter.non-traite.active {
+    background: #64748b;
+}
+
+.status-filter.en-cours.active {
+    background: #da480e;
+}
+
+.status-filter.traite.active {
+    background: #16a34a;
+}
+.logout-button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    background: #3859b6;
+    color: white;
+    transition: 0.2s ease;
+}
+
+.logout-button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    background: #3859b6;
+    color: white;
+    transition: 0.2s ease;
+}
+
+.logout-button:hover {
+    background: #2d4a99;
+}

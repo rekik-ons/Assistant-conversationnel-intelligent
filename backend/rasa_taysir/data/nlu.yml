@@ -1,0 +1,410 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet
+  examples: |
+    - bonjour
+    - salut
+    - bonsoir
+    - bonjour taysir
+    - salut taysir
+    - salut, je voudrais des informations
+    - bonsoir, je souhaite faire une demande
+
+- intent: donner_nom
+  examples: |
+    - mon nom est [Rekik](nom)
+    - je m'appelle [Rekik](nom)
+    - mon nom c'est [Ben Salem](nom)
+    - je suis [Gharbi](nom)
+    - le nom est [Trabelsi](nom)
+    - [Mansouri](nom)
+    - [Ali](nom)
+    - [Salah](nom)
+    - [Khelifi](nom)
+    - [Ben Amor](nom)
+    - [Ben Youssef](nom)
+
+- intent: donner_prenom
+  examples: |
+    - mon prénom est [Ons](prenom)
+    - je m'appelle [Ons](prenom)
+    - mon prénom c'est [Ahmed](prenom)
+    - [Sonia](prenom)
+    - [Karim](prenom)
+    - je suis [Nadia](prenom)
+
+- intent: donner_telephone
+  examples: |
+    - mon numéro est [24235698](telephone)
+    - mon numero est [24235698](telephone)
+    - mon numéro de téléphone est [22123456](telephone)
+    - mon numero de telephone est [22123456](telephone)
+    - mon téléphone est [50123456](telephone)
+    - mon telephone est [50123456](telephone)
+    - mon numéro [50663039](telephone)
+    - mon numero [50663039](telephone)
+    - mon numéro de téléphone [50663039](telephone)
+    - mon numero de telephone [50663039](telephone)
+    - voici mon numéro [27345681](telephone)
+    - voici mon numero [27345681](telephone)
+    - vous pouvez me joindre au [22123456](telephone)
+    - contactez-moi au [98451263](telephone)
+    - [98451263](telephone)
+    - [50663123](telephone)
+    - [55123478](telephone)
+    - [22345671](telephone)
+    - [98765432](telephone)
+    - [29123456](telephone)
+    - [71234567](telephone)
+    - [96123456](telephone)
+    - [40123456](telephone)
+    - [53123456](telephone)
+
+- intent: donner_age
+  examples: |
+    - [18](age)
+    - [19](age)
+    - [20](age)
+    - [21](age)
+    - [22](age)
+    - [23](age)
+    - [24](age)
+    - [25](age)
+    - [26](age)
+    - [27](age)
+    - [28](age)
+    - [29](age)
+    - [30](age)
+    - [31](age)
+    - [32](age)
+    - [33](age)
+    - [34](age)
+    - [35](age)
+    - [36](age)
+    - [37](age)
+    - [38](age)
+    - [39](age)
+    - [40](age)
+    - j'ai [18](age) ans
+    - j'ai [19](age) ans
+    - j'ai [20](age) ans
+    - j'ai [21](age) ans
+    - j'ai [22](age) ans
+    - j'ai [23](age) ans
+    - j'ai [24](age) ans
+    - j'ai [25](age) ans
+    - j'ai [26](age) ans
+    - j'ai [27](age) ans
+    - j'ai [28](age) ans
+    - j'ai [29](age) ans
+    - j'ai [30](age) ans
+    - j'ai [31](age) ans
+    - j'ai [32](age) ans
+    - j'ai [33](age) ans
+    - j'ai [34](age) ans
+    - j'ai [35](age) ans
+    - j'ai [36](age) ans
+    - j'ai [37](age) ans
+    - j'ai [38](age) ans
+    - j'ai [39](age) ans
+    - j'ai [40](age) ans
+    - mon âge est [21](age)
+    - mon âge est [22](age)
+    - mon âge est [25](age)
+    - mon âge est [30](age)
+    - mon âge est [35](age)
+    - mon âge est de [21](age)
+    - mon âge est de [22](age)
+    - mon âge est de [25](age)
+    - mon âge est de [30](age)
+    - mon âge est de [35](age)
+
+- intent: donner_profession
+  examples: |
+    - je suis [développeuse](profession)
+    - je travaille comme [commerçant](profession)
+    - ma profession est [agriculteur](profession)
+    - je suis [artisan](profession)
+    - je travaille comme [électricien](profession)
+    - je suis [ouvrière](profession)
+    - je suis [coiffeuse](profession)
+    - je suis [étudiante](profession)
+    - [enseignant](profession)
+    - [enseignante](profession)
+    - [professeur](profession)
+    - [professeure](profession)
+    - [instituteur](profession)
+    - [institutrice](profession)
+    - [médecin](profession)
+    - [infirmier](profession)
+    - [infirmière](profession)
+    - [comptable](profession)
+    - [avocat](profession)
+    - [ingénieur](profession)
+    - [vendeur](profession)
+    - [vendeuse](profession)
+    - [chauffeur](profession)
+    - [fonctionnaire](profession)
+    - [ouvrier](profession)
+    - [retraité](profession)
+    - [retraitée](profession)
+    - [étudiant](profession)
+
+- intent: donner_revenu
+  examples: |
+    - je gagne [3000](revenu) DT par mois
+    - mon salaire est de [2500](revenu) dinars
+    - je touche environ [1800](revenu) DT
+    - mon revenu mensuel est de [1500](revenu)
+    - je gagne autour de [2000](revenu) dinars
+    - je touche [3500](revenu) par mois
+
+- intent: donner_montant
+  examples: |
+    - je souhaite demander [50000](montant_demande) DT
+    - j'ai besoin de [10000](montant_demande) dinars
+    - je voudrais un financement de [15000](montant_demande) DT
+    - je demande [5000](montant_demande) dinars
+    - le montant que je souhaite est de [20000](montant_demande)
+    - j'aurais besoin de [8000](montant_demande) DT
+
+- intent: donner_charges
+  examples: |
+    - j'ai [600](charges) DT de charges
+    - mes charges sont de [500](charges) dinars
+    - je dépense environ [700](charges) DT par mois
+    - mes dépenses mensuelles sont de [400](charges)
+    - j'ai autour de [900](charges) dinars de charges
+    - mes frais sont de [300](charges) DT
+
+- intent: donner_zone
+  examples: |
+    - j'habite à [Tunis](zone_geographique)
+    - je suis à [Ben Arous](zone_geographique)
+    - j'habite à [Sousse](zone_geographique)
+    - ma zone est [Monastir](zone_geographique)
+    - je réside à [Sfax](zone_geographique)
+    - je suis de [Ariana](zone_geographique)
+
+- intent: donner_informations
+  examples: |
+    - Je gagne [3000](revenu) DT et j'ai [600](charges) DT de charges
+    - Mon salaire est de [2500](revenu) DT et mes charges sont de [500](charges)
+    - Je touche [2000](revenu) DT et je dépense [400](charges) DT
+    - Mon revenu est de [3000](revenu) DT et mes dépenses sont de [700](charges)
+    - Je gagne [1800](revenu) DT et j'ai [300](charges) DT de dépenses
+    - Je gagne [3500](revenu) DT avec [800](charges) DT de charges
+    - Je touche [2200](revenu) DT et mes charges sont de [600](charges)
+    - Mon salaire mensuel est de [2800](revenu) DT et mes dépenses sont de [500](charges)
+    - Je gagne environ [3200](revenu) DT et j'ai [700](charges) DT de dépenses
+    - Je reçois [1700](revenu) DT par mois avec [300](charges) DT de charges
+    - Mon revenu est [2400](revenu) DT et mes frais sont de [450](charges) DT
+    - Je touche environ [1900](revenu) DT et je dépense [350](charges) DT
+    - J'ai un salaire de [3000](revenu) DT et [600](charges) DT de dépenses
+    - Je gagne [2600](revenu) dinars et mes charges sont de [700](charges)
+    - Mon revenu mensuel est de [2100](revenu) et mes dépenses sont de [500](charges)
+    - Je gagne [1500](revenu) DT et j'ai [300](charges) DT de charges
+    - Je touche [4000](revenu) DT et j'ai [900](charges) DT de dépenses
+    - Mon salaire est [2300](revenu) DT avec [400](charges) DT de frais
+    - Je gagne environ [2700](revenu) DT et mes charges tournent autour de [600](charges)
+    - Je perçois [1800](revenu) DT et mes dépenses mensuelles sont de [500](charges)
+    - mon salaire est [2300](revenu) DT et mes charges sont de [400](charges) DT
+    - je gagne [2300](revenu) DT et j'ai [400](charges) DT de charges
+    - mon revenu est de [2300](revenu) DT et mes frais sont de [400](charges) DT
+    - je touche [2300](revenu) DT avec [400](charges) DT de dépenses
+    - mon salaire mensuel est de [2300](revenu) DT avec [400](charges) DT de frais
+    - je gagne [2500](revenu) DT et je dépense [500](charges) DT
+    - mon revenu mensuel est de [2500](revenu) DT et mes dépenses sont de [500](charges) DT
+    - je touche [2800](revenu) DT et mes charges mensuelles sont de [600](charges) DT
+    - mon salaire est [3000](revenu) DT avec [700](charges) DT de charges
+    - je gagne [1800](revenu) DT et mes frais mensuels sont de [300](charges) DT
+
+- intent: faq_financement
+  examples: |
+    - Quels types de financement proposez-vous ?
+    - Quels sont vos types de financement ?
+    - Quels financements propose Taysir ?
+    - Je voudrais connaître vos financements
+    - Quels produits de financement avez-vous ?
+    - Vous proposez quels financements ?
+
+- intent: faq_eligibilite
+  examples: |
+    - Qui peut demander un financement ?
+    - Qui peut bénéficier d'un financement ?
+    - Est-ce que je peux bénéficier d'un financement ?
+    - Quelles sont les conditions pour être éligible ?
+    - Qui peut obtenir un financement ?
+    - Comment savoir si je suis éligible ?
+
+- intent: faq_documents
+  examples: |
+    - Quels documents dois-je fournir ?
+    - Quels papiers faut-il fournir ?
+    - Quels sont les documents nécessaires ?
+    - De quels documents ai-je besoin ?
+    - Quels justificatifs faut-il ?
+    - Qu'est-ce que je dois apporter pour faire une demande ?
+
+- intent: faq_montant
+  examples: |
+    - Quel montant puis-je demander ?
+    - Combien puis-je emprunter ?
+    - Quel est le montant maximum ?
+    - Combien peut-on obtenir ?
+    - Quel montant de financement puis-je avoir ?
+    - Quelle somme puis-je demander ?
+
+- intent: faq_remboursement
+  examples: |
+    - Comment fonctionne le remboursement ?
+    - Comment dois-je rembourser ?
+    - Sur combien de temps rembourse-t-on ?
+    - Comment se passe le remboursement ?
+    - Quel est le mode de remboursement ?
+    - Je veux savoir comment rembourser mon financement
+
+- intent: faq_delai
+  examples: |
+    - Combien de temps faut-il pour avoir une réponse ?
+    - Quel est le délai de traitement ?
+    - Combien de temps prend une demande ?
+    - Quand vais-je avoir une réponse ?
+    - Quel est le délai pour obtenir un financement ?
+    - Combien de temps faut-il pour traiter mon dossier ?
+
+- intent: faq_conditions
+  examples: |
+    - Quelles sont les conditions ?
+    - Quelles sont les conditions pour obtenir un financement ?
+    - Quelles conditions faut-il respecter ?
+    - Quelles sont les conditions de financement ?
+    - Que faut-il pour obtenir un financement ?
+    - Quelles conditions dois-je remplir ?
+
+- intent: faq_agence
+  examples: |
+    - Où se trouve une agence Taysir ?
+    - Où sont vos agences ?
+    - Quelle est l'agence la plus proche ?
+    - Où puis-je trouver une agence ?
+    - Avez-vous une agence près de chez moi ?
+    - Je cherche une agence Taysir
+
+- intent: faq_contact
+  examples: |
+    - Comment contacter Taysir ?
+    - Comment puis-je vous contacter ?
+    - Quel est votre contact ?
+    - Je voudrais contacter Taysir
+    - Comment joindre Taysir ?
+    - Quels sont vos moyens de contact ?
+
+- intent: faq_frais
+  examples: |
+    - Quels sont les frais ?
+    - Combien coûtent les frais ?
+    - Quels frais dois-je payer ?
+    - Est-ce qu'il y a des frais ?
+    - Combien coûte le financement ?
+    - Quels sont les coûts du financement ?
+
+- intent: faq_demande
+  examples: |
+    - Comment faire une demande ?
+    - Comment demander un financement ?
+    - Comment déposer une demande ?
+    - Comment commencer une demande ?
+    - Quelle est la procédure pour demander un financement ?
+    - Quelles sont les étapes pour demander un crédit ?
+    - Comment obtenir un crédit ?
+    - Quelles sont les démarches pour demander un prêt ?
+
+- intent: faq_simulation
+  examples: |
+    - Est-ce que je peux faire une simulation ?
+    - Puis-je simuler mon financement ?
+    - Comment faire une simulation ?
+    - Je voudrais faire une simulation
+    - Est-il possible de calculer ma capacité ?
+    - Pouvez-vous estimer mon financement ?
+
+- intent: question_generale
+  examples: |
+    - Pouvez-vous m'expliquer le financement ?
+    - Je voudrais plus d'informations
+    - Comment ça fonctionne exactement ?
+    - Je ne comprends pas les conditions
+    - Est-ce que vous pouvez m'aider ?
+    - J'ai une question concernant le financement
+    - Quelles informations demandez-vous ?
+    - Quelles informations le chatbot demande-t-il ?
+    - Quelles informations dois-je fournir ?
+    - Quelles informations dois-je donner ?
+    - Que dois-je renseigner ?
+    - Que dois-je vous communiquer ?
+    - Comment fonctionne le chatbot ?
+    - Comment fonctionne cet assistant ?
+    - Que peut faire cet assistant ?
+    - Que fait le chatbot ?
+    - Je voudrais des informations générales
+    - Donnez-moi des informations sur le chatbot
+    - Je souhaite obtenir des informations
+    - J'ai une question
+    - Pouvez-vous m'expliquer votre fonctionnement ?
+    - Je voudrais comprendre comment fonctionne le chatbot
+    - Comment fonctionne votre assistant ?
+    - Que pouvez-vous faire ?
+    - Que peut faire votre assistant ?
+    - Qu'est-ce que ce chatbot peut faire ?
+    - Je voudrais en savoir plus
+    - Pouvez-vous m'aider à comprendre ?
+    - Quels sont vos horaires ?
+    - Quels sont vos horaires d'ouverture ?
+    - À quelle heure êtes-vous ouverts ?
+    - Quand êtes-vous ouverts ?
+    - Quand puis-je vous contacter ?
+    - Quels sont les horaires de Taysir ?
+    - À quelle heure ouvre Taysir ?
+    - À quelle heure ferme Taysir ?
+    - Quand est-ce que Taysir est ouvert ?
+    - Quels sont les horaires des agences ?
+    - Quels sont vos jours d'ouverture ?
+    - C'est quoi un microcrédit ?
+    - Qu'est-ce qu'un microcrédit ?
+    - Peux-tu m'expliquer ce qu'est un microcrédit ?
+    - Peux-tu m'expliquer simplement le microcrédit ?
+    - Je voudrais comprendre ce qu'est le microcrédit
+    - Que signifie microcrédit ?
+    - Comment fonctionne un microcrédit ?
+    - À quoi sert un microcrédit ?
+    - Peux-tu me parler du microcrédit ?
+    - Explique-moi le microcrédit
+    - Je veux savoir ce qu'est un microcrédit
+    - Qu'est-ce que le microcrédit ?
+
+- intent: demande_credit
+  examples: |
+    - je veux un prêt
+    - je veux faire une demande de crédit
+    - je veux demander un crédit
+    - je souhaite demander un crédit
+    - je souhaite obtenir un crédit
+    - je voudrais obtenir un prêt
+    - je voudrais faire une demande de crédit
+    - je veux obtenir un prêt
+    - je veux un crédit
+    - j'ai besoin d'un crédit
+    - j'ai besoin d'un prêt
+    - je souhaite faire une demande de crédit
+    - je voudrais obtenir un financement
+    - je veux obtenir un financement
+    - j'ai besoin d'un financement
+    - je souhaite obtenir un financement
+
+- regex: telephone
+  examples: |
+    - \b[24579][0-9]{7}\b
+

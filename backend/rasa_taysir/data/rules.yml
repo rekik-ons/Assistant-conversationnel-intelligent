@@ -1,0 +1,128 @@
+version: "3.1"
+
+rules:
+
+- rule: Démarrer la conversation
+  steps:
+    - intent: greet
+    - action: action_initialiser_etat
+
+- rule: Démarrer une demande de crédit
+  steps:
+    - intent: demande_credit
+    - action: action_initialiser_etat
+
+- rule: Traiter le nom
+  steps:
+    - intent: donner_nom
+    - action: action_traiter_reponse
+
+- rule: Traiter le prénom
+  steps:
+    - intent: donner_prenom
+    - action: action_traiter_reponse
+
+- rule: Traiter le téléphone
+  steps:
+    - intent: donner_telephone
+    - action: action_traiter_reponse
+
+- rule: Traiter l'âge
+  steps:
+    - intent: donner_age
+    - action: action_traiter_reponse
+
+- rule: Traiter la profession
+  steps:
+    - intent: donner_profession
+    - action: action_traiter_reponse
+
+- rule: Traiter le revenu
+  steps:
+    - intent: donner_revenu
+    - action: action_traiter_reponse
+
+- rule: Traiter le montant demandé
+  steps:
+    - intent: donner_montant
+    - action: action_traiter_reponse
+
+- rule: Traiter les charges
+  steps:
+    - intent: donner_charges
+    - action: action_traiter_reponse
+
+- rule: Traiter la zone géographique
+  steps:
+    - intent: donner_zone
+    - action: action_traiter_reponse
+
+- rule: FAQ financement
+  steps:
+    - intent: faq_financement
+    - action: utter_faq_financement
+
+- rule: FAQ eligibilite
+  steps:
+    - intent: faq_eligibilite
+    - action: utter_faq_eligibilite
+
+- rule: FAQ documents
+  steps:
+    - intent: faq_documents
+    - action: utter_faq_documents
+
+- rule: FAQ montant
+  steps:
+    - intent: faq_montant
+    - action: utter_faq_montant
+
+- rule: FAQ remboursement
+  steps:
+    - intent: faq_remboursement
+    - action: utter_faq_remboursement
+
+- rule: FAQ délai
+  steps:
+    - intent: faq_delai
+    - action: utter_faq_delai
+
+- rule: FAQ conditions
+  steps:
+    - intent: faq_conditions
+    - action: utter_faq_conditions
+
+- rule: FAQ agence
+  steps:
+    - intent: faq_agence
+    - action: utter_faq_agence
+
+- rule: FAQ contact
+  steps:
+    - intent: faq_contact
+    - action: utter_faq_contact
+
+- rule: FAQ frais
+  steps:
+    - intent: faq_frais
+    - action: utter_faq_frais
+
+- rule: FAQ demande
+  steps:
+    - intent: faq_demande
+    - action: utter_faq_demande
+
+- rule: FAQ simulation
+  steps:
+    - intent: faq_simulation
+    - action: utter_faq_simulation
+
+- rule: Répondre aux questions générales avec l'IA
+  steps:
+    - intent: question_generale
+    - action: action_llm_reponse
+
+- rule: Répondre aux questions inconnues avec le LLM
+  steps:
+    - intent: nlu_fallback
+    - action: action_llm_reponse

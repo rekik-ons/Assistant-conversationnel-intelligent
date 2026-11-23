@@ -1,0 +1,43 @@
+[
+  {
+    "text": "Mon salaire est 2300 DT avec 400 DT de frais",
+    "entities": [
+      {
+        "start": 16,
+        "end": 20,
+        "value": "2300",
+        "entity": "revenu"
+      },
+      {
+        "start": 29,
+        "end": 32,
+        "value": "400",
+        "entity": "charges"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "revenu",
+        "start": 16,
+        "end": 20,
+        "confidence_entity": 0.9995637536048889,
+        "value": "2300",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "revenu",
+        "start": 29,
+        "end": 32,
+        "confidence_entity": 0.8179075121879578,
+        "value": "400",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

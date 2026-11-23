@@ -1,0 +1,524 @@
+/* ==========================================================
+   POLICE
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+
+/* ==========================================================
+   VARIABLES DE THÈME — Taysir Microfinance
+   ========================================================== */
+
+:root {
+    --taysir-orange: #222222;
+    --taysir-orange-dark: #333333;
+    --taysir-orange-light: #F5F5F5;
+    --taysir-orange-soft: #D9D9D9;
+
+    --taysir-navy: #222222;
+    --taysir-navy-light: #444444;
+
+    --taysir-gray-bg: #F7F7F7;
+    --taysir-gray-border: #DDDDDD;
+    --taysir-gray-text: #666666;
+
+    --taysir-success-bg: #F2F2F2;
+    --taysir-success-border: #CCCCCC;
+    --taysir-success-text: #333333;
+    --taysir-success-text-dark: #444444;
+
+    --taysir-refused-bg: #F2F2F2;
+    --taysir-refused-border: #CCCCCC;
+    --taysir-refused-text: #333333;
+    --taysir-refused-text-dark: #444444;
+
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+}
+
+
+/* ==========================================================
+   PAGE
+   ========================================================== */
+
+.chat-page {
+    height: 100dvh;
+    background: var(--taysir-gray-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    box-sizing: border-box;
+    font-family: 'Cairo', 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   CONTAINER
+   ========================================================== */
+
+.chat-container {
+    width: 100%;
+    max-width: 860px;
+    height: 100%;
+    max-height: 760px;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.chat-header {
+    background: var(--taysir-orange);
+    color: white;
+    padding: 22px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chat-header h1 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+.chat-header p {
+    margin: 4px 0 0;
+    opacity: 0.92;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.new-chat-button {
+    border: none;
+    background: white;
+    color: var(--taysir-orange-dark);
+    padding: 10px 18px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 13.5px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.new-chat-button:hover {
+    background: var(--taysir-orange-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.new-chat-button:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================================
+   ZONE DES MESSAGES (SCROLL)
+   ========================================================== */
+
+.chat-scroll-area {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--taysir-gray-bg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.chat-scroll-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-scroll-area::-webkit-scrollbar-thumb {
+    background: #CCCCCC;
+    border-radius: 10px;
+}
+
+.chat-scroll-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   MESSAGES
+   ========================================================== */
+
+.message {
+    display: flex;
+    margin-bottom: 14px;
+    animation: taysir-fade-in 0.25s ease;
+}
+
+.message:last-child {
+    margin-bottom: 0;
+}
+
+.message-content {
+    max-width: 75%;
+    padding: 12px 17px;
+    border-radius: 16px;
+    line-height: 1.55;
+    font-size: 14.5px;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+@keyframes taysir-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* utilisateur */
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.user-message .message-content {
+    background: var(--taysir-orange);
+    color: white;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* assistant */
+
+.assistant-message {
+    justify-content: flex-start;
+}
+
+.assistant-message .message-content {
+    background: white;
+    color: var(--taysir-navy);
+    border: 1px solid var(--taysir-gray-border);
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================================
+   BIENVENUE
+   ========================================================== */
+
+.welcome-message {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--taysir-gray-text);
+}
+
+.welcome-message h2 {
+    color: var(--taysir-orange-dark);
+    margin: 0 0 10px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.welcome-message p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   LOADING
+   ========================================================== */
+
+.typing {
+    color: var(--taysir-gray-text);
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.typing::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--taysir-orange);
+    animation: taysir-pulse 1s infinite ease-in-out;
+}
+
+@keyframes taysir-pulse {
+    0%, 100% { opacity: 0.3; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+
+/* ==========================================================
+   RÉSULTAT DU PROSPECT
+   ========================================================== */
+
+.prospect-result {
+    background: white;
+    border: 1px solid var(--taysir-gray-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    animation: taysir-fade-in 0.3s ease;
+}
+
+.prospect-result h2 {
+    margin: 0 0 18px;
+    text-align: center;
+    color: var(--taysir-navy);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.score-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--taysir-orange-light);
+    border: 1px solid var(--taysir-orange-soft);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+.score-result span {
+    font-size: 13.5px;
+    color: var(--taysir-orange-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.score-result strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--taysir-navy);
+}
+
+
+/* ==========================================================
+   MESSAGE DE TRANSFERT
+   ========================================================== */
+
+.transfer-message {
+    padding: 18px 20px;
+    border-radius: var(--radius-md);
+}
+
+.transfer-message h3 {
+    margin: 0 0 8px;
+    font-size: 16.5px;
+    font-weight: 700;
+}
+
+.transfer-message p {
+    margin: 0;
+    line-height: 1.55;
+    font-size: 14px;
+}
+
+.transfer-message.success {
+    background: var(--taysir-success-bg);
+    border: 1px solid var(--taysir-success-border);
+}
+
+.transfer-message.success h3 {
+    color: var(--taysir-success-text);
+}
+
+.transfer-message.success p {
+    color: var(--taysir-success-text-dark);
+}
+
+.transfer-message.refused {
+    background: var(--taysir-refused-bg);
+    border: 1px solid var(--taysir-refused-border);
+}
+
+.transfer-message.refused h3 {
+    color: var(--taysir-refused-text);
+}
+
+.transfer-message.refused p {
+    color: var(--taysir-refused-text-dark);
+}
+
+
+/* ==========================================================
+   SAISIE
+   ========================================================== */
+
+.chat-input-container {
+    display: flex;
+    gap: 10px;
+    padding: 18px 20px;
+    background: white;
+    border-top: 1px solid var(--taysir-gray-border);
+    flex-shrink: 0;
+}
+
+.chat-input-container input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 16px;
+    border: 1.5px solid var(--taysir-gray-border);
+    border-radius: var(--radius-sm);
+    outline: none;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--taysir-navy);
+    background: var(--taysir-gray-bg);
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.chat-input-container input::placeholder {
+    color: #888888;
+}
+
+.chat-input-container input:focus {
+    border-color: var(--taysir-orange);
+    background: white;
+    box-shadow: 0 0 0 3px var(--taysir-orange-light);
+}
+
+.chat-input-container input:disabled {
+    background: var(--taysir-gray-bg);
+    color: #888888;
+}
+
+.chat-input-container button {
+    border: none;
+    padding: 0 24px;
+    min-height: 46px;
+    border-radius: var(--radius-sm);
+    background: var(--taysir-orange);
+    color: white;
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 14.5px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.chat-input-container button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35);
+}
+
+.chat-input-container button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.chat-input-container button:disabled {
+    background: #BBBBBB;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    .chat-page {
+        padding: 0;
+    }
+
+    .chat-container {
+        max-height: none;
+        border-radius: 0;
+        border: none;
+    }
+
+    .chat-header {
+        padding: 14px 16px;
+    }
+
+    .chat-header h1 {
+        font-size: 18px;
+    }
+
+    .chat-header p {
+        font-size: 12.5px;
+    }
+
+    .new-chat-button {
+        padding: 8px 14px;
+        font-size: 12.5px;
+    }
+
+    .chat-scroll-area {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .message-content {
+        max-width: 88%;
+        font-size: 14px;
+    }
+
+    .welcome-message {
+        padding: 40px 10px;
+    }
+
+    .prospect-result {
+        padding: 18px;
+    }
+
+    .score-result strong {
+        font-size: 28px;
+    }
+
+    .chat-input-container {
+        padding: 10px 12px;
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+    }
+
+    .chat-input-container input {
+        padding: 11px 14px;
+        font-size: 16px; /* évite le zoom automatique sur iPhone */
+    }
+
+    .chat-input-container button {
+        padding: 0 16px;
+        font-size: 13.5px;
+    }
+}

@@ -14,3 +14,10 @@ venv/
 # Node
 node_modules/
 dist/
+# Rasa virtual environment
+backend/rasa_env/
+**/rasa_env/
+
+# Rasa generated cache
+backend/rasa_taysir/.rasa/
+**/.rasa/
